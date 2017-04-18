@@ -1,0 +1,31 @@
+name: Aviary
+version: 0.1.0
+description: Aviary image editor integration with the Grav CMS
+icon: plug
+author:
+  name: urbansquid
+  email: ric@urbansquid.london
+homepage: https://github.com/urbansquidlondon/grav-plugin-aviary
+demo: http://demo.yoursite.com
+keywords: grav, plugin, etc
+bugs: https://github.com/urbansquidlondon/grav-plugin-aviary/issues
+docs: https://github.com/urbansquidlondon/grav-plugin-aviary/blob/develop/README.md
+license: MIT
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: Plugin status
+      highlight: 1
+      default: 0
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+    text_var:
+      type: text
+      label: Text Variable
+      help: Text to add to the top of a page

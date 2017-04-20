@@ -1,0 +1,36 @@
+
+.dz-view {
+    top : 49px !important;
+}
+
+.dz-remove {
+    top : 74px !important;
+}
+
+.dz-edit {
+    display    : none;
+    position   : absolute;
+    background : #E1E1E1;
+    width      : 25px;
+    height     : 25px;
+    right      : -25px;
+    font-size  : 0;
+    cursor     : pointer !important;
+    top        : 24px !important;
+}
+.dz-edit:hover:after {
+    color: #0082ba;
+}
+.dz-edit:after {
+    text-align  : center;
+    display     : block;
+    color       : #737c81;
+    font-family : FontAwesome;
+    font-size   : 18px;
+    line-height : 25px;
+    content     : "\f040";
+}
+
+.dz-image-preview:hover .dz-edit {
+    display : block;
+}

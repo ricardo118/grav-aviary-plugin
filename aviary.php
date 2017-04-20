@@ -1,6 +1,7 @@
 <?php
 namespace Grav\Plugin;
 
+use Grav\Common\Uri;
 use Grav\Common\Plugin;
 use RocketTheme\Toolbox\Event\Event;
 
@@ -23,8 +24,27 @@ class AviaryPlugin extends Plugin
     public static function getSubscribedEvents()
     {
         return [
-            'onPluginsInitialized' => ['onPluginsInitialized', 0]
+            'onPluginsInitialized' => ['onPluginsInitialized', 0],
+            'onAssetsInitialized' => ['onAssetsInitialized', 0]
         ];
+    }
+
+    private function setupAssets() {
+
+
+
+    }
+
+    public function onAssetsInitialized() {
+
+        $this->grav['assets']->addJs('user/plugins/aviary/js/aviary.js',  ['group' => 'bottom']);
+        $this->grav['assets']->addCss('user/plugins/aviary/css/aviary.css', ['group' => 'bottom']);
+        if ($this->grav['uri']->scheme() == 'http://') {
+            $this->grav['assets']->addJs('http://feather.aviary.com/imaging/v3/editor.js', ['group' => 'bottom']);
+        }else {
+            $this->grav['assets']->addJs('https://dme0ih8comzn4.cloudfront.net/imaging/v3/editor.js',  ['group' => 'bottom']);
+        }
+
     }
 
     /**
@@ -34,30 +54,15 @@ class AviaryPlugin extends Plugin
     {
         // Don't proceed if we are in the admin plugin
         if ($this->isAdmin()) {
-            return;
+
+            $this->enable([
+                'onAssetsInitialized' => ['onAssetsInitialized', 0]
+            ]);
+
+            $this->setupAssets();
+
         }
-
-        // Enable the main event we are interested in
-        $this->enable([
-            'onPageContentRaw' => ['onPageContentRaw', 0]
-        ]);
     }
 
-    /**
-     * Do some work for this event, full details of events can be found
-     * on the learn site: http://learn.getgrav.org/plugins/event-hooks
-     *
-     * @param Event $e
-     */
-    public function onPageContentRaw(Event $e)
-    {
-        // Get a variable from the plugin configuration
-        $text = $this->grav['config']->get('plugins.aviary.text_var');
 
-        // Get the current raw content
-        $content = $e['page']->getRawContent();
-
-        // Prepend the output with the custom text and set back on the page
-        $e['page']->setRawContent($text . "\n\n" . $content);
-    }
 }

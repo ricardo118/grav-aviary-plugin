@@ -37,12 +37,13 @@ class AviaryPlugin extends Plugin
 
     public function onAssetsInitialized() {
 
-        $this->grav['assets']->addJs('user/plugins/aviary/js/aviary.js',  ['group' => 'bottom']);
-        $this->grav['assets']->addCss('user/plugins/aviary/css/aviary.css', ['group' => 'bottom']);
+        $this->grav['assets']->addJs('user/plugins/aviary/js/dropzone.js', ['loading' => 'defer']);
+        $this->grav['assets']->addJs('user/plugins/aviary/js/aviary.js', ['loading' => 'defer']);
+        $this->grav['assets']->addCss('user/plugins/aviary/css/aviary.css');
         if ($this->grav['uri']->scheme() == 'http://') {
-            $this->grav['assets']->addJs('http://feather.aviary.com/imaging/v3/editor.js', ['group' => 'bottom']);
+            $this->grav['assets']->addJs('http://feather.aviary.com/imaging/v3/editor.js',['loading' => 'defer']);
         }else {
-            $this->grav['assets']->addJs('https://dme0ih8comzn4.cloudfront.net/imaging/v3/editor.js',  ['group' => 'bottom']);
+            $this->grav['assets']->addJs('https://dme0ih8comzn4.cloudfront.net/imaging/v3/editor.js', ['loading' => 'defer']);
         }
 
     }

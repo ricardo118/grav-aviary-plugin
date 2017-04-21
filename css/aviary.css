@@ -1,12 +1,3 @@
-
-.dz-view {
-    top : 49px !important;
-}
-
-.dz-remove {
-    top : 74px !important;
-}
-
 .dz-edit {
     display    : block;
     position   : absolute;
@@ -16,7 +7,7 @@
     right      : -25px;
     font-size  : 0;
     cursor     : pointer !important;
-    top        : 24px !important;
+    top        : 74px !important;
 }
 .dz-edit:hover:after {
     color: #0082ba;
@@ -29,12 +20,4 @@
     font-size   : 18px;
     line-height : 25px;
     content     : "\f040";
-}
-
-.dz-image-preview:hover .dz-edit {
-    display : block;
-}
-
-#current-image {
-    /*display:none;*/
 }

@@ -25,21 +25,19 @@ $(document).ready(function () {
     // access the already defined dropzone element
     var myDropzone = Dropzone.forElement("#grav-dropzone");
 
-    //myDropzone.previewsContainer = previewTemplate;
-    //$(myDropzone.previewsContainer).html(previewTemplate);
-    //console.log(myDropzone.previewsContainer);
-
-
+    // create an element to hold the original image
     currentImage = document.createElement('img');
     currentImage.id = 'dz-current-image';
     currentImage.src = window.location.origin;
 
+    // create the element to launch the editor, append to the current template in use.
     a = document.createElement('a');
     a.href =  'javascript:undefined;';
     a.className = 'dz-edit';
     a.id = 'dz-edit';
     a.setAttribute('data-dz-view', '');
 
+    // when a new file is added, it appends the new edit button, which launches the editor
     myDropzone.on("success", function(file) {
         file.previewTemplate.append(a);
     });
@@ -48,6 +46,7 @@ $(document).ready(function () {
     var csdkImageEditor = new Aviary.Feather({
         apiKey: 'bf06a5ee072248539ec95c826d4366f1',
         onSave: function(imageID, newURL) {
+            // TODO Use the newURL (amazon s3 temp link) to reupload to the server.
             currentImage.src = newURL;
             csdkImageEditor.close();
             console.log(newURL);
@@ -59,15 +58,13 @@ $(document).ready(function () {
         }
     });
 
-    $(".dz-edit").click(function() {
-        return false;
-    });
     // Launch Image Editor
     $('#grav-dropzone').on('click', '.dz-edit', function(event) {
-        event.preventDefault();
-        currentImage.src = currentImage.src + $(this).attr('href').substring(1);
-        console.log(currentImage);
 
+        event.preventDefault();//prevent default so the a's href doesn't send us to the image directly
+        currentImage.src = currentImage.src + $(this).attr('href').substring(1); // set the full image src
+
+        // launch the editor with the created img element
          csdkImageEditor.launch({
              image: currentImage,
          });

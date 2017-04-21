@@ -22,9 +22,6 @@ $(document).ready(function () {
       <a class="dz-edit" title="Launch Editor" href="javascript:undefined;" data-dz-edit>Launch Editor</a>
     </div>`.trim();
 
-    // A temporary fix for editing images post upload only
-    var editButton = '<a class="dz-edit" title="Launch Editor" href="javascript:undefined;" data-dz-view>Launch Editor</a>';
-
     // access the already defined dropzone element
     var myDropzone = Dropzone.forElement("#grav-dropzone");
 
@@ -33,20 +30,18 @@ $(document).ready(function () {
     //console.log(myDropzone.previewsContainer);
 
 
+    currentImage = document.createElement('img');
+    currentImage.id = 'dz-current-image';
+    currentImage.src = window.location.origin;
 
-    var currentImage;
-
-
+    a = document.createElement('a');
+    a.href =  'javascript:undefined;';
+    a.className = 'dz-edit';
+    a.id = 'dz-edit';
+    a.setAttribute('data-dz-view', '');
 
     myDropzone.on("success", function(file) {
-
-        a = document.createElement('button');
-        a.href =  'javascript:undefined;';
-        a.className = 'dz-edit';
-        a.id = 'dz-edit';
-        a.setAttribute('data-dz-view', '');
         file.previewTemplate.append(a);
-        console.log(file);
     });
 
     // Image Editor configuration
@@ -68,16 +63,13 @@ $(document).ready(function () {
         return false;
     });
     // Launch Image Editor
-    $('#grav-dropzone').on('click', '.dz-edit', function() {
-
-       // var currentImageId = $(this).parent().find('.dz-details img').attr('id','test');
-       var url = $(this).attr('href');
-           url = url.substring(1);
-           url = window.location.origin + url;
-       var img = $(this).parent().find('.dz-view').attr('href');
+    $('#grav-dropzone').on('click', '.dz-edit', function(event) {
+        event.preventDefault();
+        currentImage.src = currentImage.src + $(this).attr('href').substring(1);
+        console.log(currentImage);
 
          csdkImageEditor.launch({
-             image: url,
+             image: currentImage,
          });
     });
 

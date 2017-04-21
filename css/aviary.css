@@ -34,3 +34,7 @@
 .dz-image-preview:hover .dz-edit {
     display : block;
 }
+
+#current-image {
+    /*display:none;*/
+}

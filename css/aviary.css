@@ -1,5 +1,5 @@
 .dz-edit {
-    display    : block;
+    display    : none;
     position   : absolute;
     background : #E1E1E1;
     width      : 25px;
@@ -20,4 +20,8 @@
     font-size   : 18px;
     line-height : 25px;
     content     : "\f040";
+}
+
+.dropzone .dz-preview:hover .dz-edit {
+    display : block;
 }

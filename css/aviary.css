@@ -8,7 +8,7 @@
 }
 
 .dz-edit {
-    display    : none;
+    display    : block;
     position   : absolute;
     background : #E1E1E1;
     width      : 25px;

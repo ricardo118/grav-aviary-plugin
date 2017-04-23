@@ -37,6 +37,7 @@ $(document).ready(function () {
     a.id = 'dz-edit';
     a.setAttribute('data-dz-view', '');
 
+    var refreshImg;
     // when a new file is added, it appends the new edit button, which launches the editor
     myDropzone.on("success", function(file) {
         file.previewTemplate.append(a);
@@ -47,9 +48,8 @@ $(document).ready(function () {
         apiKey: 'bf06a5ee072248539ec95c826d4366f1',
         onSave: function(imageID, newURL) {
             // TODO Use the newURL (amazon s3 temp link) to reupload to the server.
-            currentImage.src = newURL;
+            $(refreshImg).attr('src', newURL);
             csdkImageEditor.close();
-            console.log(newURL);
         },
         onError: function(errorObj) {
             console.log(errorObj.code);
@@ -63,7 +63,7 @@ $(document).ready(function () {
 
         event.preventDefault();//prevent default so the a's href doesn't send us to the image directly
         currentImage.src = currentImage.src + $(this).attr('href').substring(1); // set the full image src
-
+        refreshImg = $(this).parent().find('.dz-details img');
         // launch the editor with the created img element
          csdkImageEditor.launch({
              image: currentImage,

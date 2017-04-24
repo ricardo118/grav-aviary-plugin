@@ -1,9 +1,7 @@
 <?php
 namespace Grav\Plugin;
 
-use Grav\Common\Uri;
 use Grav\Common\Plugin;
-use RocketTheme\Toolbox\Event\Event;
 
 /**
  * Class AviaryPlugin
@@ -27,12 +25,6 @@ class AviaryPlugin extends Plugin
             'onPluginsInitialized' => ['onPluginsInitialized', 0],
             'onAssetsInitialized' => ['onAssetsInitialized', 0]
         ];
-    }
-
-    private function setupAssets() {
-
-
-
     }
 
     public function onAssetsInitialized() {
@@ -59,8 +51,6 @@ class AviaryPlugin extends Plugin
             $this->enable([
                 'onAssetsInitialized' => ['onAssetsInitialized', 0]
             ]);
-
-            $this->setupAssets();
 
         }
     }

@@ -29,6 +29,8 @@ $(document).ready(function () {
     var phpPath = window.GravAdmin.config.base_url_simple + '/user/plugins/aviary/upload.php';
     var editedImg = {};
 
+    console.log(myDropzone);
+
     function replaceThumbnail(newURL){
         var files = myDropzone.files;
         $.each(files, function (index, file) {

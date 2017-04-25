@@ -1,0 +1,5 @@
+{
+    "require": {
+        "symfony/filesystem": "^3.2"
+    }
+}

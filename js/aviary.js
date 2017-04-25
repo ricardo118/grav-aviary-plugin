@@ -26,10 +26,8 @@ $(document).ready(function () {
     myDropzone.options.previewTemplate = previewTemplate;
     // create an element to hold the original image
     var uploadPath = $('#grav-dropzone').attr('data-media-path');
-    var phpPath = window.GravAdmin.config.base_url_simple + '/user/plugins/aviary/upload.php';
+    var phpPath = window.GravAdmin.config.base_url_simple + '/admin/aviary-endpoint';
     var editedImg = {};
-
-    console.log(myDropzone);
 
     function replaceThumbnail(newURL){
         var files = myDropzone.files;
@@ -49,7 +47,7 @@ $(document).ready(function () {
         img.onload = function () {
             context.drawImage(img,0,0);
             var dataURL = canvas.toDataURL("image/png");
-            uploadImg(dataURL,uploadPath, editedImg.name);
+			uploadImg(url, uploadPath, editedImg.name);
         }
     }
 
@@ -58,9 +56,11 @@ $(document).ready(function () {
             type: "POST",
             url: phpPath,
             data: {
-                imgBase64: dataURL,
-                uploadPath: uploadPath,
-                imgName: imgName
+				data: {
+					remotePath: dataURL,
+					uploadPath: uploadPath,
+					imgName: imgName
+				}
             },
             success: function(data) {
                 console.log(data);

@@ -57,7 +57,6 @@ class AviaryPlugin extends Plugin
 
     /**
      * [onAssetsInitialized description]
-     * @return [type] [description]
      */
     public function onAssetsInitialized()
     {
@@ -90,6 +89,7 @@ class AviaryPlugin extends Plugin
      * Ajax-Endpoint to handle File-operations
      * @param Event $e RocketTheme\Toolbox\Event\Event
      * @return string Prints state of operation
+     * @throws \Exception
      */
     public function pluginEndpoint(Event $e)
     {
@@ -106,7 +106,7 @@ class AviaryPlugin extends Plugin
         }
 
         $config = $this->config();
-        $target = $config['locator']->base . '/' . $data['uploadPath'] . '/' . $data['imgName'];
+        $target = $config['locator']->base . '' . $data['uploadPath'] . '/' . $data['imgName'];
 
         // Save edited image
         try {

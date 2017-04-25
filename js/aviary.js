@@ -24,9 +24,12 @@ $(document).ready(function () {
     // access the already defined dropzone element
     var myDropzone = Dropzone.forElement("#grav-dropzone");
     myDropzone.options.previewTemplate = previewTemplate;
-    // create an element to hold the original image
-    var uploadPath = $('#grav-dropzone').attr('data-media-path');
+
+    var tempuploadPath = $('#grav-dropzone').attr('data-media-path');
+    var uploadPath = tempuploadPath.replace(window.GravAdmin.config.base_url_simple, '');
+
     var phpPath = window.GravAdmin.config.base_url_simple + '/admin/aviary-endpoint';
+
     var editedImg = {};
 
     function replaceThumbnail(newURL){
@@ -36,19 +39,6 @@ $(document).ready(function () {
                 myDropzone.createThumbnailFromUrl(file, newURL, null, true); // create a new thumbnail from the edited picture
             }
         })
-    }
-
-    function getImgfromURL(url){
-        var canvas = document.createElement('canvas');
-        var context = canvas.getContext('2d');
-        var img = new Image();
-        img.crossOrigin = true;
-        img.src = url;
-        img.onload = function () {
-            context.drawImage(img,0,0);
-            var dataURL = canvas.toDataURL("image/png");
-			uploadImg(url, uploadPath, editedImg.name);
-        }
     }
 
     function uploadImg(dataURL, uploadPath, imgName) {
@@ -74,7 +64,7 @@ $(document).ready(function () {
         apiKey: 'bf06a5ee072248539ec95c826d4366f1',
         onSave: function(imageID, newURL) {
             replaceThumbnail(newURL);
-            getImgfromURL(newURL);
+            uploadImg(newURL, uploadPath, editedImg.name);
             csdkImageEditor.close();
         },
         onError: function(errorObj) {

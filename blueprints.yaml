@@ -168,7 +168,7 @@ form:
             enhance:
               type: toggle
               label: PLUGIN_AVIARY.ENHANCE
-              help: PLUGIN_AVIARY.ENHANCE_HELP
+              description: PLUGIN_AVIARY.ENHANCE_HELP
               highlight: 1
               default: 0
               options:
@@ -180,7 +180,7 @@ form:
             effects:
               type: toggle
               label: PLUGIN_AVIARY.EFFECTS
-              help: PLUGIN_AVIARY.EFFECTS_HELP
+              description: PLUGIN_AVIARY.EFFECTS_HELP
               highlight: 1
               default: 0
               options:
@@ -192,7 +192,7 @@ form:
             frames:
               type: toggle
               label: PLUGIN_AVIARY.FRAMES
-              help: PLUGIN_AVIARY.FRAMES_HELP
+              description: PLUGIN_AVIARY.FRAMES_HELP
               highlight: 1
               default: 0
               options:
@@ -204,7 +204,7 @@ form:
             overlays:
               type: toggle
               label: PLUGIN_AVIARY.OVERLAYS
-              help: PLUGIN_AVIARY.OVERLAYS_HELP
+              description: PLUGIN_AVIARY.OVERLAYS_HELP
               highlight: 1
               default: 0
               options:
@@ -216,7 +216,7 @@ form:
             stickers:
               type: toggle
               label: PLUGIN_AVIARY.STICKERS
-              help: PLUGIN_AVIARY.STICKERS_HELP
+              description: PLUGIN_AVIARY.STICKERS_HELP
               highlight: 1
               default: 0
               options:
@@ -228,7 +228,7 @@ form:
             orientation:
               type: toggle
               label: PLUGIN_AVIARY.ORIENTATION
-              help: PLUGIN_AVIARY.ORIENTATION_HELP
+              description: PLUGIN_AVIARY.ORIENTATION_HELP
               highlight: 1
               default: 0
               options:
@@ -240,7 +240,7 @@ form:
             crop:
               type: toggle
               label: PLUGIN_AVIARY.CROP
-              help: PLUGIN_AVIARY.CROP_HELP
+              description: PLUGIN_AVIARY.CROP_HELP
               highlight: 1
               default: 0
               options:
@@ -252,7 +252,7 @@ form:
             resize:
               type: toggle
               label: PLUGIN_AVIARY.RESIZE
-              help: PLUGIN_AVIARY.RESIZE_HELP
+              description: PLUGIN_AVIARY.RESIZE_HELP
               highlight: 1
               default: 0
               options:
@@ -264,7 +264,7 @@ form:
             lighting:
               type: toggle
               label: PLUGIN_AVIARY.LIGHTING
-              help: PLUGIN_AVIARY.LIGHTING_HELP
+              description: PLUGIN_AVIARY.LIGHTING_HELP
               highlight: 1
               default: 0
               options:
@@ -276,7 +276,7 @@ form:
             color:
               type: toggle
               label: PLUGIN_AVIARY.COLOR
-              help: PLUGIN_AVIARY.COLOR_HELP
+              description: PLUGIN_AVIARY.COLOR_HELP
               highlight: 1
               default: 0
               options:
@@ -288,7 +288,7 @@ form:
             sharpness:
               type: toggle
               label: PLUGIN_AVIARY.SHARPNESS
-              help: PLUGIN_AVIARY.SHARPNESS_HELP
+              description: PLUGIN_AVIARY.SHARPNESS_HELP
               highlight: 1
               default: 0
               options:
@@ -300,7 +300,7 @@ form:
             focus:
               type: toggle
               label: PLUGIN_AVIARY.FOCUS
-              help: PLUGIN_AVIARY.FOCUS_HELP
+              description: PLUGIN_AVIARY.FOCUS_HELP
               highlight: 1
               default: 0
               options:
@@ -312,7 +312,7 @@ form:
             vignette:
               type: toggle
               label: PLUGIN_AVIARY.VIGNETTE
-              help: PLUGIN_AVIARY.VIGNETTE_HELP
+              description: PLUGIN_AVIARY.VIGNETTE_HELP
               highlight: 1
               default: 0
               options:
@@ -324,7 +324,7 @@ form:
             blemish:
               type: toggle
               label: PLUGIN_AVIARY.BLEMISH
-              help: PLUGIN_AVIARY.BLEMISH_HELP
+              description: PLUGIN_AVIARY.BLEMISH_HELP
               highlight: 1
               default: 0
               options:
@@ -336,7 +336,7 @@ form:
             whiten:
               type: toggle
               label: PLUGIN_AVIARY.WHITEN
-              help: PLUGIN_AVIARY.WHITEN_HELP
+              description: PLUGIN_AVIARY.WHITEN_HELP
               highlight: 1
               default: 0
               options:
@@ -348,7 +348,7 @@ form:
             redeye:
               type: toggle
               label: PLUGIN_AVIARY.REDEYE
-              help: PLUGIN_AVIARY.REDEYE_HELP
+              description: PLUGIN_AVIARY.REDEYE_HELP
               highlight: 1
               default: 0
               options:
@@ -360,7 +360,7 @@ form:
             draw:
               type: toggle
               label: PLUGIN_AVIARY.DRAW
-              help: PLUGIN_AVIARY.DRAW_HELP
+              description: PLUGIN_AVIARY.DRAW_HELP
               highlight: 1
               default: 0
               options:
@@ -372,7 +372,7 @@ form:
             colorsplash:
               type: toggle
               label: PLUGIN_AVIARY.COLORSPLASH
-              help: PLUGIN_AVIARY.COLORSPLASH_HELP
+              description: PLUGIN_AVIARY.COLORSPLASH_HELP
               highlight: 1
               default: 0
               options:
@@ -384,7 +384,7 @@ form:
             text:
               type: toggle
               label: PLUGIN_AVIARY.TEXT
-              help: PLUGIN_AVIARY.TEXT_HELP
+              description: PLUGIN_AVIARY.TEXT_HELP
               highlight: 1
               default: 0
               options:
@@ -396,7 +396,7 @@ form:
             meme:
               type: toggle
               label: PLUGIN_AVIARY.MEME
-              help: PLUGIN_AVIARY.MEME_HELP
+              description: PLUGIN_AVIARY.MEME_HELP
               highlight: 1
               default: 0
               options:

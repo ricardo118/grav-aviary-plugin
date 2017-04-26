@@ -64,6 +64,11 @@ class AviaryPlugin extends Plugin
         $this->grav['assets']->addJs('user/plugins/aviary/js/dropzone.js', ['loading' => 'defer']);
         $this->grav['assets']->addJs('user/plugins/aviary/js/aviary.js', ['loading' => 'defer', 'priority' => 0]);
         $this->grav['assets']->addCss('user/plugins/aviary/css/aviary.css');
+
+        // if custom theme on >
+//        $this->grav['assets']->addInlineCss($this->config->get('plugins.aviary.theme_custom_editor'));
+
+
         if ($this->grav['uri']->scheme() == 'http://') {
             $this->grav['assets']->addJs('http://feather.aviary.com/imaging/v3/editor.js', ['loading' => 'defer']);
         } else {
@@ -82,6 +87,7 @@ class AviaryPlugin extends Plugin
                 'onPagesInitialized' => ['pluginEndpoint', 0],
                 'onAssetsInitialized' => ['onAssetsInitialized', 0]
             ]);
+
         }
     }
 

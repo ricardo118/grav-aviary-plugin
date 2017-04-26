@@ -1,13 +1,13 @@
-name: Aviary
-version: 0.1.0
+name: Aviary Image Editor
+version: 1.0.0
 description: Aviary image editor integration with the Grav CMS
-icon: plug
+icon: pencil
 author:
-  name: urbansquid
+  name: URBANSQUID
   email: ric@urbansquid.london
 homepage: https://github.com/urbansquidlondon/grav-plugin-aviary
 demo: http://demo.yoursite.com
-keywords: grav, plugin, etc
+keywords: aviary, image editor, photoshop, images, adobe, adobe cloud
 bugs: https://github.com/urbansquidlondon/grav-plugin-aviary/issues
 docs: https://github.com/urbansquidlondon/grav-plugin-aviary/blob/develop/README.md
 license: MIT
@@ -15,17 +15,260 @@ license: MIT
 form:
   validation: strict
   fields:
-    enabled:
-      type: toggle
-      label: Plugin status
-      highlight: 1
-      default: 0
-      options:
-        1: Enabled
-        0: Disabled
-      validate:
-        type: bool
-    text_var:
-      type: text
-      label: Text Variable
-      help: Text to add to the top of a page
+
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+
+        configuration:
+          type: tab
+          title: PLUGIN_AVIARY.SECTION_CONFIGURATION
+          fields:
+
+            enabled:
+              type: toggle
+              label: PLUGIN_AVIARY.PLUGIN_STATUS
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            enable_admin:
+              type: toggle
+              label: PLUGIN_AVIARY.ENABLE_ADMIN
+              help: PLUGIN_AVIARY.ENABLE_ADMIN_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            enable_site:
+              type: toggle
+              label: PLUGIN_AVIARY.ENABLE_USER
+              help: PLUGIN_AVIARY.ENABLE_USER_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            enable_site:
+              type: toggle
+              label: PLUGIN_AVIARY.ENABLE_USER
+              help: PLUGIN_AVIARY.ENABLE_USER_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            language:
+              type: select
+              size: medium
+              label: PLUGIN_AVIARY.LANGUAGE
+              help: PLUGIN_AVIARY.LANGUAGE_HELP
+              default: 0
+              options:
+                en: English
+                bg: Bulgarian
+                ca: Catalan
+                zh_HANS: Chinese (simplified)
+                zh_HANT: Chinese (traditional)
+                cs: Czech
+                da: Danish
+                nl: Dutch
+                fi: Finnish
+                fr: French
+                de: German
+                el: Greek
+                he: Hebrew
+                hu: Hungarian
+                id: Indonesian
+                it: Italian
+                jp: Japanese
+                ko: Korean
+                lv: Latvian
+                lt: Lithuanian
+                no: Norwegian
+                pl: Polish
+                pt: Portuguese
+                pt_BR: Portuguese (Brazilian)
+                ru: Russian
+                es: Spanish
+                sk: Slovak
+                sv: Swedish
+                tr: Turkish
+                vi: Vietnamese
+
+            display_img_size:
+              type: toggle
+              label: PLUGIN_AVIARY.IMG_SIZE
+              help: PLUGIN_AVIARY.IMG_SIZE_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+        dev_options:
+          type: tab
+          title: PLUGIN_AVIARY.SECTION_DEVS
+          fields:
+
+            spacer_cors:
+              type: spacer
+              text: PLUGIN_AVIARY.ENABLE_CORS_NOTE
+
+            enable_cors:
+              type: toggle
+              label: PLUGIN_AVIARY.ENABLE_CORS
+              help: PLUGIN_AVIARY.ENABLE_CORS_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            all_tools:
+              type: radio
+              label: PLUGIN_AVIARY.TOOLS_RADIO
+              help: PLUGIN_AVIARY.TOOLS_RADIO_HELP
+              highlight: 1
+              default: all
+              options:
+                all: All
+                basic: Basic
+                custom: Custom
+
+            tools:
+              type: checkboxes
+              label: PLUGIN_AVIARY.TOOLS
+              help: PLUGIN_AVIARY.TOOLS_HELP
+              default:
+                enhance: false
+                effects: false
+                frames: false
+                overlays: false
+                stickers: false
+                orientation: false
+                crop: false
+                resize: false
+                lighting: false
+                color: false
+                sharpness: false
+                focus: false
+                vignette: false
+                blemish: false
+                whiten: false
+                redeye: false
+                draw: false
+                colorsplash: false
+                text: false
+                meme: false
+              options:
+                enhance:
+                  label: PLUGIN_AVIARY.ENHANCE
+                  help: 'test'
+                effects: PLUGIN_AVIARY.EFFECTS
+                frames: PLUGIN_AVIARY.FRAMES
+                overlays: PLUGIN_AVIARY.OVERLAYS
+                stickers: PLUGIN_AVIARY.STICKERS
+                orientation: PLUGIN_AVIARY.ORIENTATION
+                crop: PLUGIN_AVIARY.CROP
+                resize: PLUGIN_AVIARY.RESIZE
+                lighting: PLUGIN_AVIARY.LIGHTING
+                color: PLUGIN_AVIARY.COLOR
+                sharpness: PLUGIN_AVIARY.SHARPNESS
+                focus: PLUGIN_AVIARY.FOCUS
+                vignette: PLUGIN_AVIARY.VIGNETTE
+                blemish: PLUGIN_AVIARY.BLEMISH
+                whiten: PLUGIN_AVIARY.WHITEN
+                redeye: PLUGIN_AVIARY.REDEYE
+                draw: PLUGIN_AVIARY.DRAW
+                colorsplash: PLUGIN_AVIARY.COLORSPLASH
+                text: PLUGIN_AVIARY.TEXT
+                meme: PLUGIN_AVIARY.MEME
+              use: keys
+
+            spacer_crop:
+              type: spacer
+              text: '&nbsp'
+
+            crop_presets:
+              type: array
+              label: PLUGIN_AVIARY.CROP_PRESETS
+              help: PLUGIN_AVIARY.CROP_PRESETS_HELP
+              placeholder_key: PLUGIN_AVIARY.CROP_KEY
+              placeholder_value: PLUGIN_AVIARY.CROP_VALUE
+
+            crop_strict:
+              type: toggle
+              label: PLUGIN_AVIARY.CROP_STRICT
+              help: PLUGIN_AVIARY.CROP_STRICT_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY._YES
+                0: PLUGIN_AVIARY._NO
+              validate:
+                type: bool
+
+            img_quality:
+              type: text
+              size: x-small
+              label: PLUGIN_AVIARY.IMG_Q
+              help: PLUGIN_AVIARY.IMG_Q_HELP
+              placeholder: PLUGIN_AVIARY.IMG_Q_PLACEHOLDER
+              validate:
+                type: number
+                min: 1
+                max: 100
+
+        theme:
+          type: tab
+          title: PLUGIN_AVIARY.SECTION_THEME
+          fields:
+
+            theme_select:
+              type: radio
+              label: PLUGIN_AVIARY.THEME
+              help: PLUGIN_AVIARY.THEME_HELP
+              highlight: 1
+              default: dark
+              options:
+                light: Light
+                dark: Dark
+                minimum: Minimum
+                custom: Custom
+            advanced:
+                type: spacer
+                title: PLUGIN_AVIARY.THEME_WARNING_T
+                text: PLUGIN_AVIARY.THEME_WARNING
+
+            theme_custom_editor:
+              classes: aviary-theme-editor
+              type: editor
+              label: PLUGIN_AVIARY.CUSTOM_CSS
+              help: PLUGIN_AVIARY.CUSTOM_CSS
+              default: PLUGIN_AVIARY.CUSTOM_CSS_CODE
+              codemirror:
+                mode: 'css'
+                indentUnit: 4
+                lineNumbers: true
+                styleActiveLine: true

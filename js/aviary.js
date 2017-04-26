@@ -62,6 +62,7 @@ $(document).ready(function () {
     // Image Editor configuration
     var csdkImageEditor = new Aviary.Feather({
         apiKey: 'bf06a5ee072248539ec95c826d4366f1',
+        theme: 'minimum',
         onSave: function(imageID, newURL) {
             replaceThumbnail(newURL);
             uploadImg(newURL, uploadPath, editedImg.name);

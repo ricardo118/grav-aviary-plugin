@@ -1,33 +1,30 @@
-enabled: true
-text_var: 'Custom Text added by the **Aviary** plugin (disable plugin to remove)'
+enabled: false
 enable_admin: false
 enable_site: false
-language: en
+language: vi
+display_img_size: false
 enable_cors: false
 all_tools: all
-tools:
-  enhance: false
-  effects: false
-  frames: false
-  overlays: false
-  stickers: false
-  orientation: false
-  crop: false
-  resize: false
-  lighting: false
-  color: false
-  sharpness: false
-  focus: false
-  vignette: false
-  blemish: false
-  whiten: false
-  redeye: false
-  draw: false
-  colorsplash: false
-  text: false
-  meme: false
+enhance: false
+effects: false
+frames: false
+overlays: false
+stickers: false
+orientation: false
+crop: false
+resize: false
+lighting: false
+color: false
+sharpness: false
+focus: false
+vignette: false
+blemish: false
+whiten: false
+redeye: false
+draw: false
+colorsplash: false
+text: false
+meme: false
+crop_strict: false
 theme_select: dark
 theme_custom_editor: "/* general font color/reset */\r\nbody .avpw *,\r\nbody .avpw a,\r\nbody .avpw a:link,\r\nbody .avpw a:hover,\r\nbody .avpw a:visited,\r\nbody .avpw a:active {\r\n    color: #444;\r\n}\r\n/* dark background behind image */\r\n.avpw .avpw_canvas_background {\r\n    background: #3e464a;\r\n}\r\n/* dark background behind tools */\r\n.avpw .avpw_inset_background {\r\n    background: #3e464a;\r\n}\r\n/* brushed metal texture */\r\n/* outermost widget body/parent */\r\nbody .avpw {\r\n    background: #f0f0f0;\r\n}\r\n/* small icon inside an open tool */\r\n.avpw .avpw_current_tool_icon {\r\n    background: #f0f0f0;\r\n}\r\n/* popups that open within the widget */\r\n.avpw .avpw_app_popup {\r\n    background: #f0f0f0;\r\n}\r\n/* colorpicker popup */\r\n.avpw .avpw_color_picker_container {\r\n    background: #f0f0f0;\r\n}\r\n/* footer text */\r\n.avpw .avpw_footer_text,\r\n.avpw .avpw_footer_text a,\r\n.avpw .avpw_footer_text a:link,\r\n.avpw .avpw_footer_text a:visited,\r\n.avpw .avpw_footer_text a:hover,\r\n.avpw .avpw_footer_text a:active {\r\n    color: #656565;\r\n}\r\n/* tool icons */\r\n/* normal */\r\n.avpw .avpw_tool_icon_image {\r\n    background-color: #efefef;\r\n}\r\n/* hover */\r\n.avpw .avpw_tool_icon:hover .avpw_tool_icon_image {\r\n    background-color: #ffffff;\r\n}\r\n/* pressod */\r\n.avpw .avpw_tool_icon_down .avpw_tool_icon_image,\r\n.avpw .avpw_tool_icon_down:hover .avpw_tool_icon_image {\r\n    background-color: #e2e2e2;\r\n}\r\n/* tools paging inidcator */\r\nbody .avpw .avpw_page {\r\n    color: #3d3d3d;\r\n}\r\nbody .avpw .avpw_page_selected {\r\n    color: #00a5ff;\r\n}\r\n/* default buttons */\r\nbody .avpw .avpw_button {\r\n    background: #efefef;\r\n}\r\n/* hover */\r\nbody .avpw .avpw_button:hover {\r\n    background: #ffffff;\r\n}\r\n/* pressod */\r\nbody .avpw .avpw_button.avpw_button_down {\r\n    background-color: #e2e2e2;\r\n}\r\n/* primary button\r\n * (overriding color on these links so\r\n * we have to be explicit)\r\n */\r\nbody .avpw .avpw_primary_button,\r\nbody .avpw .avpw_primary_button:link,\r\nbody .avpw .avpw_primary_button:visited,\r\nbody .avpw .avpw_primary_button:active {\r\n    background-color: #0084cc;\r\n    color: #ffffff;\r\n}\r\n/* +/- slider label/buttons */\r\nbody .avpw .avpw_slider_label {\r\n    color: #707070;\r\n}\r\n/* darker, cut-out color */\r\n.avpw .avpw_inset_background {\r\n    background-color: #3e464a;\r\n}\r\n/* preset icons */\r\n.avpw .avpw_preset_icon {\r\n    border-left-color: #556066;\r\n    border-right-color: #272c2e;\r\n}\r\n.avpw .avpw_preset_icon_active {\r\n    background-color: #718087;\r\n}\r\n/* and light blue indicator */\r\n.avpw .avpw_preset_icon_active .avpw_preset_indicator {\r\n    background-color: #49edfc;\r\n}\r\n/* grouped push-buttons inside tools */\r\n.avpw .avpw_inset_button {\r\n    border-left-color: #556066;\r\n    border-right-color: #272c2e;\r\n}\r\n/* hover */\r\n.avpw .avpw_inset_button:hover {\r\n    background-color: #3c4347;\r\n}\r\n/* pressod */\r\n.avpw .avpw_inset_button_down {\r\n    background: #272c2e;\r\n}\r\n/* text input fields */\r\nbody .avpw .avpw_text_input {\r\n    background: #ffffff;\r\n    color: #bcbec0;\r\n}\r\n/* focus */\r\nbody .avpw .avpw_text_input_focused {\r\n    color: #3d3f40;\r\n}\r\n/* palette swapped on dark background */\r\n.avpw .avpw_inset_background .avpw_text_input {\r\n    background: #515b60;\r\n}\r\n/* focus */\r\n.avpw .avpw_inset_background .avpw_text_input_focused {\r\n    color: #ffffff;\r\n}\r\n/* labels palette swapped on dark background */\r\n.avpw .avpw_inset_background .avpw_label {\r\n    color: #ffffff;\r\n}\r\n/* frame icon */\r\n/* 'off'/default state */\r\n.avpw .avpw_inset_button .avpw_frame_toggle_icon {\r\n    border-color: #717171;\r\n}\r\n/* 'on'/active state */\r\n.avpw  .avpw_inset_button_active .avpw_frame_toggle_icon {\r\n    border-color: #49c0fc;\r\n}\r\n/* lock icon */\r\n/* 'unlocked'/default state */\r\n.avpw .avpw_inset_button .avpw_lock_icon_top,\r\n.avpw .avpw_inset_button .avpw_lock_icon_bottom {\r\n    background: #a3a3a3;\r\n}\r\n/* 'locked'/down state */\r\n.avpw .avpw_inset_button .avpw_lock_icon_top_inner,\r\n.avpw .avpw_inset_button .avpw_lock_icon_sep {\r\n    background: #383838;\r\n}\r\n/* 'locked'/active state */\r\n.avpw .avpw_inset_button_active .avpw_lock_icon_top,\r\n.avpw .avpw_inset_button_active .avpw_lock_icon_bottom {\r\n    background: #49c0fc;\r\n}"
-display_img_size: false
-crop_strict: false
-img_quality: 100

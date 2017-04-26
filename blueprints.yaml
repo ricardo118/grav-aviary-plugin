@@ -156,57 +156,259 @@ form:
                 basic: Basic
                 custom: Custom
 
-            tools:
-              type: checkboxes
-              label: PLUGIN_AVIARY.TOOLS
-              help: PLUGIN_AVIARY.TOOLS_HELP
-              default:
-                enhance: false
-                effects: false
-                frames: false
-                overlays: false
-                stickers: false
-                orientation: false
-                crop: false
-                resize: false
-                lighting: false
-                color: false
-                sharpness: false
-                focus: false
-                vignette: false
-                blemish: false
-                whiten: false
-                redeye: false
-                draw: false
-                colorsplash: false
-                text: false
-                meme: false
+            spacer_tools_fake:
+              type: spacer
+              text: '&nbsp'
+
+            spacer_tools:
+              type: spacer
+              title: PLUGIN_AVIARY.SPACER_TITLE
+              text: PLUGIN_AVIARY.SPACER_TEXT
+
+            enhance:
+              type: toggle
+              label: PLUGIN_AVIARY.ENHANCE
+              help: PLUGIN_AVIARY.ENHANCE_HELP
+              highlight: 1
+              default: 0
               options:
-                enhance: PLUGIN_AVIARY.ENHANCE
-                effects: PLUGIN_AVIARY.EFFECTS
-                frames: PLUGIN_AVIARY.FRAMES
-                overlays: PLUGIN_AVIARY.OVERLAYS
-                stickers: PLUGIN_AVIARY.STICKERS
-                orientation: PLUGIN_AVIARY.ORIENTATION
-                crop: PLUGIN_AVIARY.CROP
-                resize: PLUGIN_AVIARY.RESIZE
-                lighting: PLUGIN_AVIARY.LIGHTING
-                color: PLUGIN_AVIARY.COLOR
-                sharpness: PLUGIN_AVIARY.SHARPNESS
-                focus: PLUGIN_AVIARY.FOCUS
-                vignette: PLUGIN_AVIARY.VIGNETTE
-                blemish: PLUGIN_AVIARY.BLEMISH
-                whiten: PLUGIN_AVIARY.WHITEN
-                redeye: PLUGIN_AVIARY.REDEYE
-                draw: PLUGIN_AVIARY.DRAW
-                colorsplash: PLUGIN_AVIARY.COLORSPLASH
-                text: PLUGIN_AVIARY.TEXT
-                meme: PLUGIN_AVIARY.MEME
-              use: keys
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            effects:
+              type: toggle
+              label: PLUGIN_AVIARY.EFFECTS
+              help: PLUGIN_AVIARY.EFFECTS_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            frames:
+              type: toggle
+              label: PLUGIN_AVIARY.FRAMES
+              help: PLUGIN_AVIARY.FRAMES_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            overlays:
+              type: toggle
+              label: PLUGIN_AVIARY.OVERLAYS
+              help: PLUGIN_AVIARY.OVERLAYS_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            stickers:
+              type: toggle
+              label: PLUGIN_AVIARY.STICKERS
+              help: PLUGIN_AVIARY.STICKERS_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            orientation:
+              type: toggle
+              label: PLUGIN_AVIARY.ORIENTATION
+              help: PLUGIN_AVIARY.ORIENTATION_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            crop:
+              type: toggle
+              label: PLUGIN_AVIARY.CROP
+              help: PLUGIN_AVIARY.CROP_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            resize:
+              type: toggle
+              label: PLUGIN_AVIARY.RESIZE
+              help: PLUGIN_AVIARY.RESIZE_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            lighting:
+              type: toggle
+              label: PLUGIN_AVIARY.LIGHTING
+              help: PLUGIN_AVIARY.LIGHTING_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            color:
+              type: toggle
+              label: PLUGIN_AVIARY.COLOR
+              help: PLUGIN_AVIARY.COLOR_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            sharpness:
+              type: toggle
+              label: PLUGIN_AVIARY.SHARPNESS
+              help: PLUGIN_AVIARY.SHARPNESS_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            focus:
+              type: toggle
+              label: PLUGIN_AVIARY.FOCUS
+              help: PLUGIN_AVIARY.FOCUS_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            vignette:
+              type: toggle
+              label: PLUGIN_AVIARY.VIGNETTE
+              help: PLUGIN_AVIARY.VIGNETTE_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            blemish:
+              type: toggle
+              label: PLUGIN_AVIARY.BLEMISH
+              help: PLUGIN_AVIARY.BLEMISH_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            whiten:
+              type: toggle
+              label: PLUGIN_AVIARY.WHITEN
+              help: PLUGIN_AVIARY.WHITEN_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            redeye:
+              type: toggle
+              label: PLUGIN_AVIARY.REDEYE
+              help: PLUGIN_AVIARY.REDEYE_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            draw:
+              type: toggle
+              label: PLUGIN_AVIARY.DRAW
+              help: PLUGIN_AVIARY.DRAW_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            colorsplash:
+              type: toggle
+              label: PLUGIN_AVIARY.COLORSPLASH
+              help: PLUGIN_AVIARY.COLORSPLASH_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            text:
+              type: toggle
+              label: PLUGIN_AVIARY.TEXT
+              help: PLUGIN_AVIARY.TEXT_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
+
+            meme:
+              type: toggle
+              label: PLUGIN_AVIARY.MEME
+              help: PLUGIN_AVIARY.MEME_HELP
+              highlight: 1
+              default: 0
+              options:
+                1: PLUGIN_AVIARY.ENABLED
+                0: PLUGIN_AVIARY.DISABLED
+              validate:
+                type: bool
 
             spacer_crop:
               type: spacer
               text: '&nbsp'
+              underline: true
 
             crop_presets:
               type: array

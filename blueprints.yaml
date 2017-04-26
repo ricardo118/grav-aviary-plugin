@@ -182,9 +182,7 @@ form:
                 text: false
                 meme: false
               options:
-                enhance:
-                  label: PLUGIN_AVIARY.ENHANCE
-                  help: 'test'
+                enhance: PLUGIN_AVIARY.ENHANCE
                 effects: PLUGIN_AVIARY.EFFECTS
                 frames: PLUGIN_AVIARY.FRAMES
                 overlays: PLUGIN_AVIARY.OVERLAYS

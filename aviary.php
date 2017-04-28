@@ -60,17 +60,15 @@ class AviaryPlugin extends Plugin
      */
     public function getPluginConfig()
     {
-        $aviaryConfig = [
+        $aviaryConfig = [ //get the true or false configs
             'enable_admin' => $this->config->get('plugins.aviary.enable_admin'),
             'enable_site' => $this->config->get('plugins.aviary.enable_site'),
             'display_img_size' => $this->config->get('plugins.aviary.display_img_size'),
-            'img_quality' => $this->config->get('plugins.aviary.img_quality'),
             'enable_cors' => $this->config->get('plugins.aviary.enable_cors'),
-            'crop_strict' => $this->config->get('plugins.aviary.crop_strict'),
-            'crop_presets' => $this->config->get('plugins.aviary.crop_presets')
+            'crop_strict' => $this->config->get('plugins.aviary.crop_strict')
         ];
 
-        foreach ($aviaryConfig as $key => $value) {
+        foreach ($aviaryConfig as $key => $value) { // set the true or false configs to strings
             if($value){
                 $aviaryConfig[$key] = 'true';
             }else{
@@ -78,22 +76,38 @@ class AviaryPlugin extends Plugin
             }
         }
 
+        // Get all the non true/false configs after
         $aviaryConfig['language'] = $this->config->get('plugins.aviary.language');
         $aviaryConfig['all_tools'] = $this->config->get('plugins.aviary.all_tools');
         $aviaryConfig['theme_select'] = $this->config->get('plugins.aviary.theme_select');
+        $aviaryConfig['img_quality'] = $this->config->get('plugins.aviary.img_quality');
+        $aviaryConfig['crop_presets'] = $this->config->get('plugins.aviary.crop_presets');
 
+        //setup the custom theme if needed
         if ($aviaryConfig['theme_select'] == 'custom'){
             $this->getCustomTheme();
             $aviaryConfig['theme_select'] = "minimum";
         }
 
+        // return all the configs
         return $aviaryConfig;
+    }
+
+    public function getCropPresets($cropsArray)  // call this function only if presets not null
+    {
+        $presets = "[";
+        foreach ($cropsArray as $key => $value) {
+               $presets .= "['" . $key . "','" . "$value" . "'],";
+        }
+        $presets .= "]";
+
+        return $presets;
     }
 
     //Get which theme we're using and if custom add the new asset.
     public function getCustomTheme()
     {
-        $this->grav['assets']->addInlineCss($this->config->get('plugins.aviary.theme_custom_editor'));
+        $this->grav['assets']->addInlineCss($this->config->get('plugins.aviary.theme_custom_editor'), ['priority' => 0]);
     }
 
     // This function should only be called when all_tools is != to 'all'
@@ -155,14 +169,20 @@ class AviaryPlugin extends Plugin
             $tools = $this->getCustomTools($opts);
         }
 
-        $js  = "var editorConfig = {\n";
+        if ($opts['crop_presets'] != null){
+            $crops = $this->getCropPresets($opts['crop_presets']);
+        }
+
+        $js  = "editorConfig = {\n";
         $js .=     "apiKey: 'bf06a5ee072248539ec95c826d4366f1',\n";
         $js .=     "language: '" . $opts['language'] . "',\n";
         $js .=     "enableCORS: " . $opts['enable_cors'] . ",\n";
         $js .=     "displayImageSize: " . $opts['display_img_size'] . ",\n";
         $js .=     "theme: '" . $opts['theme_select'] . "',\n";
         $js .=     "cropPresetsStrict: " . $opts['crop_strict'] . ",\n";
-        $js .=     "tools: " . $tools;
+        $js .=     "jpgQuality: " . $opts['crop_strict'] . ",\n";
+        $js .=     "tools: " . $tools . ",\n";
+        $js .=     "cropPresets: " . $crops . "\n";
         $js .= "};";
 
         return $js;
@@ -173,12 +193,10 @@ class AviaryPlugin extends Plugin
      */
     public function onAssetsInitialized()
     {
-        $configs = $this->getPluginConfig();
         $js = $this->getJsCode();
-
         $this->grav['assets']->addJs('user/plugins/aviary/js/dropzone.js', ['loading' => 'defer']);
-        $this->grav['assets']->addInlineJs($js, ['loading' => 'defer']);
         $this->grav['assets']->addJs('user/plugins/aviary/js/aviary.js', ['loading' => 'defer', 'priority' => 0]);
+        $this->grav['assets']->addInlineJs($js, ['loading' => 'defer']);
         $this->grav['assets']->addCss('user/plugins/aviary/css/aviary.css');
 
         if ($this->grav['uri']->scheme() == 'http://') {
@@ -195,10 +213,6 @@ class AviaryPlugin extends Plugin
     public function onPluginsInitialized()
     {
         if ($this->isAdmin()) {
-            $configs = $this->getPluginConfig();
-            $tools =$this->getCustomTools($configs);
-            $this->grav['debugger']->addMessage($this->getJsCode());
-
             $this->enable([
                 'onPagesInitialized' => ['pluginEndpoint', 0],
                 'onAssetsInitialized' => ['onAssetsInitialized', 0]

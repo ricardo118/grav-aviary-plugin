@@ -61,8 +61,6 @@ $(document).ready(function () {
     }
     // Image Editor configuration
     var csdkImageEditor = new Aviary.Feather({
-        apiKey: 'bf06a5ee072248539ec95c826d4366f1',
-        theme: 'minimum',
         onSaveButtonClicked: function(){
             csdkImageEditor.saveHiRes();
             return false;
@@ -78,6 +76,12 @@ $(document).ready(function () {
             console.log(errorObj.args);
         }
     });
+
+    // update editor with plugin configs from php
+
+    csdkImageEditor.updateConfig(editorConfig);
+
+
 
     // Launch Image Editor
     $('#grav-dropzone').on('click', '.dz-edit', function(event) {

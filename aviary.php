@@ -251,7 +251,7 @@ class AviaryPlugin extends Plugin
             "signature" => $sig
         );
 
-        return json_encode($authObj);
+        return $authObj;
     }
 
     /**
@@ -301,8 +301,8 @@ class AviaryPlugin extends Plugin
         if (strpos($uri->path(), $this->config->get('plugins.aviary.authRoute') . '/' . $this->authRoute) === false) {
             return;
         }
-        $auth = $this->getAuth();
-        print $auth;
+        $authObj = $this->getAuth();
+        echo json_encode($authObj);
         exit();
     }
 }

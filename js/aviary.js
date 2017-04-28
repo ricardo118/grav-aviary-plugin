@@ -76,16 +76,12 @@ $(document).ready(function () {
             csdkImageEditor.close();
         },
         onError: function(errorObj) {
-            console.log(errorObj.code);
             console.log(errorObj.message);
-            console.log(errorObj.args);
+            //console.log(errorObj.args);
         }
     });
 
-    console.log(editorConfig);
-    csdkImageEditor.updateConfig(editorConfig);
-
-
+    csdkImageEditor.updateConfig(editorConfig); // update configs with php
 
     // Launch Image Editor
     $('#grav-dropzone').on('click', '.dz-edit', function(event) {

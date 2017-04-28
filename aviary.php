@@ -29,10 +29,11 @@ class AviaryPlugin extends Plugin
      * @var string
      */
     protected $route = 'admin/aviary-endpoint';
+
     /**
-    * Route for Auth-Endpoint
-    * @var string
-   */
+     * Route for Auth-Endpoint
+     * @var string
+     */
     protected $authRoute = 'aviary-authentication-endpoint';
 
     /**

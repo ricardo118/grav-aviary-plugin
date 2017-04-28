@@ -29,7 +29,7 @@ $(document).ready(function () {
     var uploadPath = tempuploadPath.replace(window.GravAdmin.config.base_url_simple, '');
 
     var phpPath = window.GravAdmin.config.base_url_simple + '/admin/aviary-endpoint';
-    var authPath = window.GravAdmin.config.base_url_simple + '/admin/aviary-authentication-endpoint';
+    var authPath = window.GravAdmin.config.base_url_simple + '/aviary-authentication-endpoint';
 
     var editedImg = {};
 
@@ -77,7 +77,7 @@ $(document).ready(function () {
         },
         onError: function(errorObj) {
             console.log(errorObj.message);
-            //console.log(errorObj.args);
+            console.log(errorObj);
         }
     });
 

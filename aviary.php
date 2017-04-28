@@ -222,11 +222,13 @@ class AviaryPlugin extends Plugin
     {
         if ($this->isAdmin()) {
             $this->enable([
-               // 'onPagesInitialized' => ['pluginEndpoint', 0],
-                'onPagesInitialized' => ['pluginAuthEndpoint', 0],
+                'onPagesInitialized' => ['pluginEndpoint', 0],
                 'onAssetsInitialized' => ['onAssetsInitialized', 0]
             ]);
         }
+        $this->enable([
+            'onPagesInitialized' => ['pluginAuthEndpoint', 0]
+        ]);
     }
 
     /**
@@ -244,7 +246,6 @@ class AviaryPlugin extends Plugin
         $sig = sha1($sig);
 
         $authObj = array(
-            "apiKey" => $key,
             "salt" => $salt,
             "timestamp" => $timestamp,
             "encryptionMethod" => 'sha1',

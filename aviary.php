@@ -29,6 +29,11 @@ class AviaryPlugin extends Plugin
      * @var string
      */
     protected $route = 'admin/aviary-endpoint';
+    /**
+    * Route for Auth-Endpoint
+    * @var string
+   */
+    protected $authRoute = 'aviary-authentication-endpoint';
 
     /**
      * Access Grav Configuration
@@ -182,7 +187,9 @@ class AviaryPlugin extends Plugin
         $js .=     "cropPresetsStrict: " . $opts['crop_strict'] . ",\n";
         $js .=     "jpgQuality: " . $opts['crop_strict'] . ",\n";
         $js .=     "tools: " . $tools . ",\n";
-        $js .=     "cropPresets: " . $crops . "\n";
+        if(isset($crops)){
+            $js .=     "cropPresets: " .  $crops . "\n";
+        }
         $js .= "};";
 
         return $js;
@@ -200,9 +207,9 @@ class AviaryPlugin extends Plugin
         $this->grav['assets']->addCss('user/plugins/aviary/css/aviary.css');
 
         if ($this->grav['uri']->scheme() == 'http://') {
-            $this->grav['assets']->addJs('http://feather.aviary.com/imaging/v3/editor.js', ['loading' => 'defer']);
+            $this->grav['assets']->addJs('http://feather.aviary.com/imaging/v3/editor.js');
         } else {
-            $this->grav['assets']->addJs('https://dme0ih8comzn4.cloudfront.net/imaging/v3/editor.js', ['loading' => 'defer']);
+            $this->grav['assets']->addJs('https://dme0ih8comzn4.cloudfront.net/imaging/v3/editor.js');
         }
     }
 
@@ -215,6 +222,7 @@ class AviaryPlugin extends Plugin
         if ($this->isAdmin()) {
             $this->enable([
                 'onPagesInitialized' => ['pluginEndpoint', 0],
+                'onPagesInitialized' => ['pluginAuthEndpoint', 0],
                 'onAssetsInitialized' => ['onAssetsInitialized', 0]
             ]);
         }
@@ -278,6 +286,22 @@ class AviaryPlugin extends Plugin
         }
 
         print $target . ' replaced.';
+        exit();
+    }
+    /**
+     * Auth-Endpoint for Aviary
+     * @param Event $e RocketTheme\Toolbox\Event\Event
+     * @return string Prints Auth-data
+     */
+    public function pluginAuthEndpoint(Event $e)
+    {
+        $uri = $this->grav['uri'];
+
+        if (strpos($uri->path(), $this->config->get('plugins.aviary.authRoute') . '/' . $this->authRoute) === false) {
+            return;
+        }
+        $auth = $this->getAuth();
+        print $auth;
         exit();
     }
 }

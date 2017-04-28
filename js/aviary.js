@@ -61,6 +61,9 @@ $(document).ready(function () {
     }
     // Image Editor configuration
     var csdkImageEditor = new Aviary.Feather({
+        apiKey: 'bf06a5ee072248539ec95c826d4366f1',
+        theme: editorConfig.theme,
+        language: editorConfig.language,
         onSaveButtonClicked: function(){
             csdkImageEditor.saveHiRes();
             return false;
@@ -77,8 +80,7 @@ $(document).ready(function () {
         }
     });
 
-    // update editor with plugin configs from php
-
+    console.log(editorConfig);
     csdkImageEditor.updateConfig(editorConfig);
 
 

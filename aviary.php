@@ -31,6 +31,12 @@ class AviaryPlugin extends Plugin
     protected $route = 'admin/aviary-endpoint';
 
     /**
+     * Route for Auth-Endpoint
+     * @var string
+     */
+    protected $authRoute = 'aviary-authentication-endpoint';
+
+    /**
      * Access Grav Configuration
      * @return array Grav resources, Symfony Filesystem
      */
@@ -278,6 +284,25 @@ class AviaryPlugin extends Plugin
         }
 
         print $target . ' replaced.';
+        exit();
+    }
+
+    /**
+     * Auth-Endpoint for Aviary
+     * @param Event $e RocketTheme\Toolbox\Event\Event
+     * @return string Prints Auth-data
+     */
+    public function pluginEndpoint(Event $e)
+    {
+        $uri = $this->grav['uri'];
+        
+        if (strpos($uri->path(), $this->config->get('plugins.aviary.authRoute') . '/' . $this->authRoute) === false) {
+            return;
+        }
+
+        $auth = $this->getAuth();
+
+        print $auth;
         exit();
     }
 }

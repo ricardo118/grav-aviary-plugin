@@ -63,7 +63,11 @@ $(document).ready(function () {
     var csdkImageEditor = new Aviary.Feather({
         apiKey: 'bf06a5ee072248539ec95c826d4366f1',
         theme: 'minimum',
-        onSave: function(imageID, newURL) {
+        onSaveButtonClicked: function(){
+            csdkImageEditor.saveHiRes();
+            return false;
+        },
+        onSaveHiRes: function(imageID, newURL) {
             replaceThumbnail(newURL);
             uploadImg(newURL, uploadPath, editedImg.name);
             csdkImageEditor.close();
@@ -88,6 +92,8 @@ $(document).ready(function () {
         // launch the editor with the created img element
          csdkImageEditor.launch({
              image: originalImg,
+             url: originalImg.src,
+             hiresUrl: originalImg.src
          });
     });
 

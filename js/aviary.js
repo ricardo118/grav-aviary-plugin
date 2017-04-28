@@ -62,8 +62,8 @@ $(document).ready(function () {
     }
     // Image Editor configuration
     var csdkImageEditor = new Aviary.Feather({
-        authenticationURL: authPath,
         apiKey: 'bf06a5ee072248539ec95c826d4366f1',
+        authenticationURL: authPath,
         theme: editorConfig.theme,
         language: editorConfig.language,
         onSaveButtonClicked: function(){

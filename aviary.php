@@ -222,7 +222,7 @@ class AviaryPlugin extends Plugin
     {
         if ($this->isAdmin()) {
             $this->enable([
-                'onPagesInitialized' => ['pluginEndpoint', 0],
+               // 'onPagesInitialized' => ['pluginEndpoint', 0],
                 'onPagesInitialized' => ['pluginAuthEndpoint', 0],
                 'onAssetsInitialized' => ['onAssetsInitialized', 0]
             ]);
@@ -238,7 +238,7 @@ class AviaryPlugin extends Plugin
     {
         $key = 'bf06a5ee072248539ec95c826d4366f1';
         $secret = '933f2342-7bc7-4b76-a3e5-4d75619ab245';
-        $salt = uniqid();
+        $salt = rand(0,1000);
         $timestamp = time();
         $sig = $key . $secret . $timestamp . $salt;
         $sig = sha1($sig);
@@ -297,7 +297,6 @@ class AviaryPlugin extends Plugin
     public function pluginAuthEndpoint(Event $e)
     {
         $uri = $this->grav['uri'];
-
         if (strpos($uri->path(), $this->config->get('plugins.aviary.authRoute') . '/' . $this->authRoute) === false) {
             return;
         }

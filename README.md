@@ -55,8 +55,8 @@ This is configuration tab for developers who want to personalize the editor for 
 
  - **Enable CORS:** Turn CORS on or off. This speeds up the editor but requires server setup. Check [ENABLE-CORS.ORG](http://enable-cors.org)
  - **Editor Tools Preset:** Change between tools presets. All, Basic or Custom. Toggle the tools below in `custom tools`. These toggles take no effect unless custom tool preset is selected.
- - **Crop Presets:** Add your own custom crop presets. (This will override the default ones). Presets can be done in either Ratio e.g. 3:2 or in pixels 400x500.
- - **Disable Inverting Crops:** Disables the possibility to invert a crop by clicking twice. So a preset 4:3 cant be swapped to 3:4
+ - **Crop Presets:** Add your own custom crop presets. (This will override the default ones). Presets can be done in either Ratio e.g. `3:2` or in pixels `400x500`.
+ - **Disable Inverting Crops:** Disables the possibility to invert a crop by clicking twice. So a preset `4:3` cant be swapped to `3:4`
  - **Set Image Quality:** Set the JPG image quality on save.
 
 ### Themes

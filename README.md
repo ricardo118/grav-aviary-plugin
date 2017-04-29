@@ -71,7 +71,7 @@ Customize the editor with the perfect combination of tools to create an experien
 
 There are many tools available for use:
 
-[Tools](assets/readme_tools.png)
+![Tools](assets/readme_tools.png)
  
 ## Usage
 
@@ -87,9 +87,9 @@ If you would like to request features or have issues, please contact via github 
 
 ## Todo
 
-[] Update plugin to have production and development mode
-[] Allow users to edit Images while in User Site not just in Admin
-[] Allow user to decide whether to overwrite the image or create a new image on the same location.
-[] Allow for custom API Keys.
-[] Create new Theme Presets
-[] Create new Tools Presets.
+- [ ] Update plugin to have production and development mode
+- [ ] Allow users to edit Images while in User Site not just in Admin
+- [ ] Allow user to decide whether to overwrite the image or create a new image on the same location.
+- [ ] Allow for custom API Keys.
+- [ ] Create new Theme Presets
+- [ ] Create new Tools Presets.

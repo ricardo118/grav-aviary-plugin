@@ -246,6 +246,7 @@ class AviaryPlugin extends Plugin
         $sig = sha1($sig);
 
         $authObj = array(
+            "apiKey" => $key,
             "salt" => $salt,
             "timestamp" => $timestamp,
             "encryptionMethod" => 'sha1',
@@ -301,6 +302,7 @@ class AviaryPlugin extends Plugin
         if (strpos($uri->path(), $this->config->get('plugins.aviary.authRoute') . '/' . $this->authRoute) === false) {
             return;
         }
+        header('Content-Type: application/json');
         $authObj = $this->getAuth();
         echo json_encode($authObj);
         exit();

@@ -67,6 +67,7 @@ $(document).ready(function () {
         theme: editorConfig.theme,
         language: editorConfig.language,
         onSaveButtonClicked: function(){
+            updateSignature();
             csdkImageEditor.saveHiRes();
             return false;
         },
@@ -77,11 +78,22 @@ $(document).ready(function () {
         },
         onError: function(errorObj) {
             console.log(errorObj.message);
-            console.log(errorObj);
+            console.log(errorObj.args);
         }
     });
 
     csdkImageEditor.updateConfig(editorConfig); // update configs with php
+
+    function updateSignature() {
+        $.ajax(authPath, function (data) {
+            csdkImageEditor.updateConfig({
+                apiKey: data.apiKey,
+                salt: data.salt,
+                timestamp: data.timestamp,
+                signature: data.signature
+            });
+        });
+    }
 
     // Launch Image Editor
     $('#grav-dropzone').on('click', '.dz-edit', function(event) {

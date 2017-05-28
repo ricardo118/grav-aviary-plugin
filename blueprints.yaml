@@ -38,18 +38,6 @@ form:
               validate:
                 type: bool
 
-            enable_site:
-              type: toggle
-              label: PLUGIN_AVIARY.ENABLE_USER
-              help: PLUGIN_AVIARY.ENABLE_USER_HELP
-              highlight: 1
-              default: 0
-              options:
-                1: PLUGIN_AVIARY.ENABLED
-                0: PLUGIN_AVIARY.DISABLED
-              validate:
-                type: bool
-
             language:
               type: select
               size: medium

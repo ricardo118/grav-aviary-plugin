@@ -76,18 +76,6 @@ form:
                 tr: Turkish
                 vi: Vietnamese
 
-            display_img_size:
-              type: toggle
-              label: PLUGIN_AVIARY.IMG_SIZE
-              help: PLUGIN_AVIARY.IMG_SIZE_HELP
-              highlight: 1
-              default: 0
-              options:
-                1: PLUGIN_AVIARY.ENABLED
-                0: PLUGIN_AVIARY.DISABLED
-              validate:
-                type: bool
-
         dev_options:
           type: tab
           title: PLUGIN_AVIARY.SECTION_DEVS

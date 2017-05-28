@@ -1,6 +1,5 @@
 enabled: false
 language: en
-display_img_size: false
 enable_cors: false
 all_tools: all
 enhance: false

@@ -182,7 +182,7 @@ class AviaryPlugin extends Plugin
         $js .=     "apiKey: 'bf06a5ee072248539ec95c826d4366f1',\n";
         $js .=     "language: '" . $opts['language'] . "',\n";
         $js .=     "enableCORS: " . $opts['enable_cors'] . ",\n";
-        $js .=     "displayImageSize: " . $opts['display_img_size'] . ",\n";
+        $js .=     "displayImageSize: true,\n";
         $js .=     "theme: '" . $opts['theme_select'] . "',\n";
         $js .=     "cropPresetsStrict: " . $opts['crop_strict'] . ",\n";
         $js .=     "jpgQuality: " . $opts['crop_strict'] . ",\n";

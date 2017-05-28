@@ -55,8 +55,7 @@ class AviaryPlugin extends Plugin
     public static function getSubscribedEvents()
     {
         return [
-            'onPluginsInitialized' => ['onPluginsInitialized', 0],
-            'onAssetsInitialized' => ['onAssetsInitialized', 0]
+            'onPluginsInitialized' => ['onPluginsInitialized', 0]
         ];
     }
 

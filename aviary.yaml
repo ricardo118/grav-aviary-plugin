@@ -1,6 +1,4 @@
 enabled: false
-enable_admin: false
-enable_site: false
 language: en
 display_img_size: false
 enable_cors: false

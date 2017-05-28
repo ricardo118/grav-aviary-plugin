@@ -5,11 +5,10 @@ icon: pencil
 author:
   name: URBANSQUID
   email: ric@urbansquid.london
-homepage: https://github.com/urbansquidlondon/grav-plugin-aviary
-demo: http://demo.yoursite.com
+homepage: https://github.com/ricardo118/grav-aviary-plugin
 keywords: aviary, image editor, photoshop, images, adobe, adobe cloud
-bugs: https://github.com/urbansquidlondon/grav-plugin-aviary/issues
-docs: https://github.com/urbansquidlondon/grav-plugin-aviary/blob/develop/README.md
+bugs: https://github.com/ricardo118/grav-aviary-plugin/issues
+docs: https://github.com/ricardo118/grav-aviary-plugin/blob/develop/README.md
 license: MIT
 
 form:

@@ -1,3 +1,9 @@
+# v1.0.3
+## 14/11/2017
+
+1. [](#bugfix)
+    * Fixed issue with icon overlap
+
 # v1.0.2
 ## 29/05/2017
 

@@ -7,7 +7,7 @@
     right      : -25px;
     font-size  : 0;
     cursor     : pointer !important;
-    top        : 74px !important;
+    top        : 49px !important;
 }
 .dz-edit:hover:after {
     color: #0082ba;

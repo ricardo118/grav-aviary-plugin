@@ -4,10 +4,10 @@
     background : #E1E1E1;
     width      : 25px;
     height     : 25px;
-    right      : -25px;
+    left       : 0;
     font-size  : 0;
     cursor     : pointer !important;
-    top        : 49px !important;
+    top        : 0;
 }
 .dz-edit:hover:after {
     color: #0082ba;

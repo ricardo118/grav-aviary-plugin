@@ -17,9 +17,13 @@ $(document).ready(function () {
       <div class="dz-error-message"><span data-dz-errormessage></span></div>
       <a class="dz-remove" title="Delete" href="javascript:undefined;" data-dz-remove>Delete</a>
       <a class="dz-view" title="View" href="#" target="_blank" data-dz-view>View</a>
-      <a class="dz-insert" title="Insert" href="javascript:undefined;" data-dz-insert>Insert}</a>
+      <a class="dz-metadata" title="Metadata" href="#" target="_blank" data-dz-metadata>Metadata</a>
+      <a class="dz-insert" title="Insert" href="javascript:undefined;" data-dz-insert>Insert</a>
       <a class="dz-edit" title="Launch Editor" href="javascript:undefined;" data-dz-view>Launch Editor</a>
     </div>`.trim();
+
+
+
 
     // access the already defined dropzone element
     var myDropzone = Dropzone.forElement("#grav-dropzone");

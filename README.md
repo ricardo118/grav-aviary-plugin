@@ -1,5 +1,7 @@
 # Aviary Image Editor
 
+## NOTE: UNFORTUNATELY DUE TO API CHANGES I CAN NO LONGER MAKE THIS PLUGIN WORK. DON'T USE THIS PLUGIN ANYMORE AS IT'S NOT CURRENTLY WORKING
+
 ![Aviary](assets/readme_1.png)
 
 The **Aviary** Plugin is for [Grav CMS](http://github.com/getgrav/grav). Aviary image editor integration with the Grav CMS

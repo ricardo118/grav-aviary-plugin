@@ -201,10 +201,10 @@ class AviaryPlugin extends Plugin
     public function onAssetsInitialized()
     {
         $js = $this->getJsCode();
-        $this->grav['assets']->addJs('user/plugins/aviary/js/dropzone.js', ['loading' => 'defer']);
-        $this->grav['assets']->addJs('user/plugins/aviary/js/aviary.js', ['loading' => 'defer', 'priority' => 0]);
+        $this->grav['assets']->addJs('plugin://aviary/js/dropzone.js', ['loading' => 'defer']);
+        $this->grav['assets']->addJs('plugin://aviary/js/aviary.js', ['loading' => 'defer', 'priority' => 0]);
         $this->grav['assets']->addInlineJs($js, ['loading' => 'defer']);
-        $this->grav['assets']->addCss('user/plugins/aviary/css/aviary.css');
+        $this->grav['assets']->addCss('plugin://aviary/css/aviary.css');
 
         if ($this->grav['uri']->scheme() == 'http://') {
             $this->grav['assets']->addJs('http://feather.aviary.com/imaging/v3/editor.js');
